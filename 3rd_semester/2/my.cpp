@@ -12,13 +12,13 @@ CMatrix::CMatrix(int n)
 }
 
  
-CMatrix CMatrix::operator+(const CMatrix &c) const 
+CMatrix CMatrix::operator+(const CMatrix &c) const// 
 { // будем использовать метод Гаусса
 	CMatrix b=c;
 	CMatrix a=*this;//работаем с a и b, чтобы не менять this и с
 	int n1=a.n;
 	int n2=b.n;
-	int n0;//размер результата сложения
+	int n0=a.n;//размер результата сложения
 	if(n1>n2)//если первое слагаемое больше второго
 	{	
 		n0=n1;	
@@ -63,48 +63,48 @@ CMatrix CMatrix::operator+(const CMatrix &c) const
 	}
 	int i,j,k; 
 	int **tmp;
-	tmp=new int*[2*n];
-	for(int i=0; i<2*n; i++)
-		tmp[i]=new int[n]; //отвели память   	
-	CMatrix r(n);
+	tmp=new int*[2*n0];
+	for(int i=0; i<2*n0; i++)
+		tmp[i]=new int[n0]; //отвели память   	
+	CMatrix r(n0);
 
-	for(i=0; i<n; i++)//копируем в tmp две матрицы --- получаем систему пересечения (приписали вторую систему снизу) 
-		for(j=0; j<n; j++) 
+	for(i=0; i<n0; i++)//копируем в tmp две матрицы --- получаем систему пересечения (приписали вторую систему снизу) 
+		for(j=0; j<n0; j++) 
 	    	tmp[i][j]=a.m[i][j];
-	for(i=0; i<n; i++) 
-		for(j=0; j<n; j++) 
-	    	tmp[i+n][j]=b.m[i][j];
+	for(i=0; i<n0; i++) 
+		for(j=0; j<n0; j++) 
+	    	tmp[i+n0][j]=b.m[i][j];
 
 	/*далее --- метод Гаусса*/
 
 	k=0;//в k-ую строку r будем записывать
-	for(j=0; j<n; j++)//идём по столбцам
+	for(j=0; j<n0; j++)//идём по столбцам
 	{	
-		 for(i=0; i<2*n; i++)
+		 for(i=0; i<2*n0; i++)
 			if(tmp[i][j]==1) //встретили первый ненулевой эл-т в столбце
 			{	
-				for(int l=0; l<n; l++)//берем эту строку в результат
+				for(int l=0; l<n0; l++)//берем эту строку в результат
 					r.m[k][l]=tmp[i][l];
 				k++;
-				for(int p=i+1; p<2*n; p++)//обнуляем столбец
+				for(int p=i+1; p<2*n0; p++)//обнуляем столбец
 					if(tmp[p][j]==1)
 					{
-						for(int l=0; l<n; l++)//вычитаем i-ую строку из p-ой
+						for(int l=0; l<n0; l++)//вычитаем i-ую строку из p-ой
 							tmp[p][l]=abs(tmp[p][l]-tmp[i][l]);		
 					}
-				for(int l=0; l<n; l++)//"стираем" строку --- больше её использовать не будем
+				for(int l=0; l<n0; l++)//"стираем" строку --- больше её использовать не будем
 					tmp[i][l]=2;
 				break;	
 			}
 	}
-	while(k<n)
+	while(k<n0)
 	{
-		for(int l=0; l<n; l++)//возможно, дописали нулевые строки
+		for(int l=0; l<n0; l++)//возможно, дописали нулевые строки
 			r.m[k][l]=0;
 		k++;	
 	}
 	//очистить память для буфера
-	for(int i=0; i<2*n; i++)
+	for(int i=0; i<2*n0; i++)
 		delete[] tmp[i];
 	delete[] tmp; tmp=NULL;	
 	return r;
