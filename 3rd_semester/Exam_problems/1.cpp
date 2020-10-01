@@ -1,4 +1,4 @@
-﻿//Задача к экзамену
+﻿//Задача к экзамену 1
 #include<vector>
 #include<list>
 #include<stdio.h>
