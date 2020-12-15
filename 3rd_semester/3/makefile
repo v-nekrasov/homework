@@ -1,4 +1,4 @@
-﻿a.exe:main.o my.o
+﻿a.out:main.o my.o
 	wg++ -fno-elide-constructors -std=c++11 my.o main.o
 main.o: main.cpp my.h
 	wg++ -fno-elide-constructors -std=c++11 main.cpp -c
