@@ -2,7 +2,7 @@
 from scipy.spatial import Voronoi
 import matplotlib.pyplot as plt
 import numpy as np
-points = np.random.rand(7, 2) #7 случайных точек на плоскости(2D) с координатами [0,1)
+points = np.random.rand(3, 2) #7 случайных точек на плоскости(2D) с координатами [0,1)
 vor = Voronoi(points)
 plt.plot(points[:,0], points[:,1],'o')
 plt.plot(vor.vertices[:,0], vor.vertices[:,1], '*')
