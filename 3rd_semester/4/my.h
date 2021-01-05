@@ -5,7 +5,6 @@
 #include <time.h>
 #include <cstring>
 #include <math.h>
-#include <vector>	
 using namespace std;
 class Point
 {public:

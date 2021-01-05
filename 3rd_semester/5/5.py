@@ -37,7 +37,7 @@ class RPoint(Point):#дочерний класс - точка с вещест. �
 	def __mul__(self, other):#векторное произведение
 		return self.x_ * other.y_ - self.y_ * other.x_
 	def __str__(self):
-		return '(' + str(self.x_)+ ', ' + str(self.y_) + ')'
+		return '(' + str(self.x_)+ ', ' + str(self.y_) + '), radius = ' + str(self.r)
 	def __eq__(self, other):#оператор == 
 		return (((abs(self.x_ - other.x_) < 0.0001)) & (abs(self.y_ - other.y_) < 0.0001))
 	
@@ -182,8 +182,7 @@ try:
 					edges.append(ed2)
 				if f3:
 					edges.append(ed3)
-				
-		print(len(edges))			
+						
 		edges.sort(key=lambda edg: edg.dist)
 		edges_0 = edges.copy()
 		for i in range(len(edges)):
@@ -211,6 +210,8 @@ try:
 		for ed in edges:
 			ed.p1.draw_circle(ed.p1.r, 'green')
 			ed.p2.draw_circle(ed.p2.r, 'green')
+		for p in points:
+			print(p)	
 	def draw_trian(event):#обработчик события --- построить триангуляцию Делоне
 		for i in range(len(edges)):
 			edges_0[i].draw_edge('yellow')

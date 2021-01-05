@@ -1,3 +1,4 @@
+//Задача 3 
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -39,15 +40,18 @@ int cmp(const void * word1, const void * word2)
 
 int main(void)
 {
-	FILE *in = fopen("1.txt", "r"); char **a; int n;
+	FILE *in = fopen("3.txt", "r"), *out = fopen("t0.txt", "w"); char **a; int n;
 	a = get(in, &n);
 	pr(a, n);
 	puts("---");
 	qsort(a, n, sizeof(char*), cmp);
 	pr(a, n);
+	for (int i = 0; i < n; i++)
+		fprintf(out, "%s\n", a[i]); 		
 	for(int i = 0; i < n; i++)
 		free(a[i]);
 	free(a);
 	fclose(in);
+	fclose(out);
 	return 0;
 }

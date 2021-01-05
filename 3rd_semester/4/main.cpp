@@ -1,11 +1,7 @@
 ﻿#include "my.h"
 int main()
 {
-	vector<Point> vec;
-	vec.push_back(Point(0,0));
-	vec.push_back(Point(0,1));
 	
-	return 0;
 	PointTree t(Point(0,0), 5.);//создание пустого квадрата по центру и радиусу
 	t.Ins(Point(0.1,0.2));
 	t.Ins(Point(0.2,0.6));  
