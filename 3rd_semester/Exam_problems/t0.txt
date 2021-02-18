@@ -1,5 +1,9 @@
 afdf
 fdfdafdf
 fdfdfddfd
+<<<<<<< Updated upstream
+=======
+lallalal
+>>>>>>> Stashed changes
 llala
 lllalldldl
