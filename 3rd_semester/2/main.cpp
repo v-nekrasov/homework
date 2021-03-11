@@ -6,8 +6,8 @@ int main(void)
 	cout<<"a="<<endl<<a<<endl<<"b="<<endl<<b<<endl;
 	c=a;
 	cout<<"c(=a)="<<endl<<c<<endl;
-	c=a+b;
-	cout<<"c=a+b"<<endl<<c;
+	c=a+b+a;
+	cout<<"c=a+b+a"<<endl<<c;
 return 0;
 
 	cout<<"c(=b)="<<endl<<c<<endl;
