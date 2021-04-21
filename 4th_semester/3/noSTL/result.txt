@@ -1,0 +1,17 @@
+﻿NO STL:
+
+parall_sum_time: 4
+sum_time: 5 p
+parall_move_time: 1
+move_time: 2   
+parall_++_time: 1
+++_time: 6  
+
+STL:
+
+parall_sum_time: 8
+sum_time: 13
+parall_move_time: 1  
+move_time: 1  
+parall_++_time: 1  
+++_time: 7 
