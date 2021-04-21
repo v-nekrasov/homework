@@ -1,2 +1,2 @@
 # homework
-My homework for the course «Work on a computer», MSU meсhmath
+Моя домашняя работа по курсу "Работа на ЭВМ"
